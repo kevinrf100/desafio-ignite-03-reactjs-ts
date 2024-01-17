@@ -24,8 +24,14 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 1rem;
     }
 
+
     a {
         color: inherit;
+        text-decoration: none;
+    }
+
+    a:hover {
+        border-bottom: 1px solid ${({ theme }) => theme["blue-500"]};
     }
 
     button {

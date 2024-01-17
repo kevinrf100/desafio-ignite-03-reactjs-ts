@@ -3,7 +3,6 @@ import Cover from "../../assets/Cover.svg";
 
 export const HeaderContainer = styled.header`
   display: flex;
-  align-items: center;
   justify-content: center;
 
   width: 100%;
@@ -13,4 +12,9 @@ export const HeaderContainer = styled.header`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  img {
+    height: fit-content;
+    padding-top: 4rem;
+  }
 `;

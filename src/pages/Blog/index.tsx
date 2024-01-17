@@ -1,9 +1,12 @@
+import { Profile } from "./components/profile";
+import { SearchPost } from "./components/searchPost";
 import { BlogContainer } from "./styles";
 
 export function Blog() {
   return (
     <BlogContainer>
-      <h1>Blog</h1>
+      <Profile />
+      <SearchPost />
     </BlogContainer>
   );
 }

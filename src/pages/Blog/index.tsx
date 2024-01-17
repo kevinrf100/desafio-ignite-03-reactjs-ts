@@ -1,5 +1,6 @@
-import { Profile } from "./components/profile";
-import { SearchPost } from "./components/searchPost";
+import { PostList } from "./components/PostList";
+import { Profile } from "./components/Profile";
+import { SearchPost } from "./components/SearchPost";
 import { BlogContainer } from "./styles";
 
 export function Blog() {
@@ -7,6 +8,8 @@ export function Blog() {
     <BlogContainer>
       <Profile />
       <SearchPost />
+
+      <PostList />
     </BlogContainer>
   );
 }

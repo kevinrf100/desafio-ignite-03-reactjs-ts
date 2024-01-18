@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PostContainer = styled.div`
+export const PostItemContainer = styled.div`
   max-width: 26rem;
   max-height: 16.25rem;
 
@@ -10,6 +10,8 @@ export const PostContainer = styled.div`
   gap: 1.25rem;
 
   padding: 2rem;
+
+  border-radius: 6px;
 
   background: ${({ theme }) => theme["base-post"]};
 `;

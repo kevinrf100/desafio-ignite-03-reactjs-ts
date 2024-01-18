@@ -5,4 +5,8 @@ export const PostsContainer = styled.div`
   flex-direction: row;
 
   flex-wrap: wrap;
+
+  gap: 2rem;
+
+  margin-top: 3rem;
 `;

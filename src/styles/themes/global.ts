@@ -30,10 +30,6 @@ export const GlobalStyles = createGlobalStyle`
         text-decoration: none;
     }
 
-    a:hover {
-        border-bottom: 1px solid ${({ theme }) => theme["blue-500"]};
-    }
-
     button {
         cursor: pointer;
     }

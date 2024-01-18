@@ -1,10 +1,15 @@
-import { Post } from "../../../Post";
+import { PostItem } from "../../../../components/PostItem";
 import { PostsContainer } from "./styles";
 
 export function PostList() {
   return (
     <PostsContainer>
-      <Post />
+      <PostItem />
+      <PostItem />
+      <PostItem />
+      <PostItem />
+      <PostItem />
+      <PostItem />
     </PostsContainer>
   );
 }

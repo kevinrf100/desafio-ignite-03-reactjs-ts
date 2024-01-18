@@ -5,4 +5,6 @@ export const BlogContainer = styled.div`
   flex-direction: column;
 
   justify-content: center;
+
+  padding-bottom: 2rem;
 `;

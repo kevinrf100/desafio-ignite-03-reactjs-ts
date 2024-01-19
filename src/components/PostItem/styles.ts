@@ -1,6 +1,7 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const PostItemContainer = styled.div`
+export const PostItemContainer = styled(NavLink)`
   max-width: 26rem;
   max-height: 16.25rem;
 
@@ -12,8 +13,13 @@ export const PostItemContainer = styled.div`
   padding: 2rem;
 
   border-radius: 6px;
+  border: 1px solid transparent;
 
   background: ${({ theme }) => theme["base-post"]};
+
+  &:hover {
+    border: 1px solid ${({ theme }) => theme["base-label"]};
+  }
 `;
 
 export const Header = styled.header`

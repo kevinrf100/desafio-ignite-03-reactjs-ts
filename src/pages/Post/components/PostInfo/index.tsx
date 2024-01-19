@@ -9,7 +9,7 @@ import {
 } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCalendar,
+  faCalendarDay,
   faChevronLeft,
   faComment,
   faUpRightFromSquare,
@@ -34,15 +34,15 @@ export function PostInfo() {
       <Title>JavaScript data types and data structures</Title>
       <PostInfosItemsContainer>
         <PostInfoItem>
-          <FontAwesomeIcon icon={faGithub} />
+          <FontAwesomeIcon width={18} icon={faGithub} />
           kevinfe
         </PostInfoItem>
         <PostInfoItem>
-          <FontAwesomeIcon icon={faCalendar} />
+          <FontAwesomeIcon width={18} icon={faCalendarDay} />
           Há 1 dia
         </PostInfoItem>
         <PostInfoItem>
-          <FontAwesomeIcon icon={faComment} />5 comentários
+          <FontAwesomeIcon width={18} icon={faComment} />5 comentários
         </PostInfoItem>
       </PostInfosItemsContainer>
     </PostInfoContainer>

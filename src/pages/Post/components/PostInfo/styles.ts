@@ -65,4 +65,6 @@ export const PostInfoItem = styled.div`
 
   font-family: "Nunito";
   font-size: 1rem;
+
+  color: ${({ theme }) => theme["base-span"]};
 `;

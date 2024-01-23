@@ -1,15 +1,14 @@
-import { PostList } from "./components/PostList";
 import { Profile } from "./components/Profile";
 import { SearchPost } from "./components/SearchPost";
-import { BlogContainer } from "./styles";
+import { PostsProvider } from "../../contexts/PostsContext";
+import { PostsList } from "./components/PostsList";
 
 export function Blog() {
   return (
-    <BlogContainer>
+    <PostsProvider>
       <Profile />
       <SearchPost />
-
-      <PostList />
-    </BlogContainer>
+      <PostsList />
+    </PostsProvider>
   );
 }

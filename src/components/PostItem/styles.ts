@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const PostItemContainer = styled(NavLink)`
+  width: 50%;
   max-width: 26rem;
   max-height: 16.25rem;
 
@@ -40,6 +41,10 @@ export const Title = styled.h1`
   font-family: "Nunito";
   font-size: 1.25rem;
   font-weight: bold;
+`;
+
+export const PostDateInfo = styled.span`
+  white-space: nowrap;
 `;
 
 export const Description = styled.span`

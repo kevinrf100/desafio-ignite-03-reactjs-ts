@@ -12,6 +12,6 @@
         "endOfline": "auto"
       }
     ],
-    "@typescript-eslint/camelcase": "off",
+    "camelcase": "off"
   }
 }

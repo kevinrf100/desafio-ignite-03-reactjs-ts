@@ -9,7 +9,7 @@ export function PostsList() {
   return (
     <PostsContainer>
       {posts.map((post, index) => {
-        return <PostItem key={index} {...post} />;
+        return <PostItem key={index} post={post} />;
       })}
     </PostsContainer>
   );

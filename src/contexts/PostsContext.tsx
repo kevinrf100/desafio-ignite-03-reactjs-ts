@@ -7,11 +7,12 @@ import {
 } from "react";
 import { api } from "../lib/axios";
 
-interface Post {
+export interface Post {
   title: string;
-  description: string;
-  createdAt: string;
+  body: string;
+  created_at: string;
   id: string;
+  number: number;
 }
 
 interface PostsContextType {

@@ -1,19 +1,23 @@
+import { Post } from "../../contexts/PostsContext";
+import { dateFormatterFromNow } from "../../lib/Utils/formatter";
 import { Header, PostDateInfo, PostItemContainer, Title } from "./styles";
 
 interface PostItemProps {
-  title: string;
-  description: string;
-  createdAt: string;
+  post: Post;
 }
 
-export function PostItem({ title, description, createdAt }: PostItemProps) {
+export function PostItem({ post }: PostItemProps) {
+  const { title, created_at, body, number } = post;
+
+  const formattedDate = dateFormatterFromNow(created_at);
+
   return (
-    <PostItemContainer to="/post/test">
+    <PostItemContainer to={`post/${number}`}>
       <Header>
         <Title>{title}</Title>
-        <PostDateInfo>{createdAt}</PostDateInfo>
+        <PostDateInfo>{formattedDate}</PostDateInfo>
       </Header>
-      <span>{description}</span>
+      <span>{body}</span>
     </PostItemContainer>
   );
 }

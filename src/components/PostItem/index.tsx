@@ -1,6 +1,12 @@
 import { Post } from "../../contexts/PostsContext";
 import { dateFormatterFromNow } from "../../lib/Utils/formatter";
-import { Header, PostDateInfo, PostItemContainer, Title } from "./styles";
+import {
+  Description,
+  Header,
+  PostDateInfo,
+  PostItemContainer,
+  Title,
+} from "./styles";
 
 interface PostItemProps {
   post: Post;
@@ -17,7 +23,7 @@ export function PostItem({ post }: PostItemProps) {
         <Title>{title}</Title>
         <PostDateInfo>{formattedDate}</PostDateInfo>
       </Header>
-      <span>{body}</span>
+      <Description>{body}</Description>
     </PostItemContainer>
   );
 }

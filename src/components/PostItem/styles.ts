@@ -47,9 +47,15 @@ export const PostDateInfo = styled.span`
   white-space: nowrap;
 `;
 
-export const Description = styled.span`
+export const Description = styled.p`
   color: ${({ theme }) => theme["base-text"]};
 
   font-family: "Nunito";
   font-size: 1rem;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
 `;

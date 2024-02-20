@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SearchPostContainer = styled.div`
+export const SearchPostContainer = styled.form`
   display: flex;
   flex-direction: column;
 
@@ -10,6 +10,7 @@ export const SearchPostContainer = styled.div`
 
   input {
     background: ${({ theme }) => theme["base-input"]};
+    color: ${({ theme }) => theme["base-text"]};
 
     padding: 0.75rem 1rem;
 

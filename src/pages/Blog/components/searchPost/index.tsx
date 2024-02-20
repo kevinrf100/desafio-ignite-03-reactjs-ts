@@ -16,17 +16,21 @@ const searchFormScheme = z.object({
 type SearchFormInputs = z.infer<typeof searchFormScheme>;
 
 export function SearchPost() {
-  const { posts } = useContext(PostsContext);
+  const { posts, fetchPosts } = useContext(PostsContext);
 
-  const { register } = useForm<SearchFormInputs>();
+  const { register, handleSubmit } = useForm<SearchFormInputs>();
+
+  async function handleSearchPosts(data: SearchFormInputs) {
+    await fetchPosts(data.query);
+  }
 
   return (
-    <SearchPostContainer>
+    <SearchPostContainer onSubmit={handleSubmit(handleSearchPosts)}>
       <SearchPostHeader>
         <Title>Publicações</Title>
         <TotalItems>{posts.length} publicações</TotalItems>
       </SearchPostHeader>
-      <input type="text" placeholder="Buscar conteúdo" {...register} />
+      <input type="text" placeholder="Buscar conteúdo" {...register("query")} />
     </SearchPostContainer>
   );
 }

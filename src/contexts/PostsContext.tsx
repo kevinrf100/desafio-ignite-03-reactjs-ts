@@ -17,6 +17,7 @@ export interface Post {
 
 interface PostsContextType {
   posts: Post[];
+  fetchPosts: (query?: string) => Promise<void>;
 }
 
 interface PostProviderProps {
@@ -41,6 +42,8 @@ export function PostsProvider({ children }: PostProviderProps) {
   }, [fetchPosts]);
 
   return (
-    <PostsContext.Provider value={{ posts }}>{children}</PostsContext.Provider>
+    <PostsContext.Provider value={{ posts, fetchPosts }}>
+      {children}
+    </PostsContext.Provider>
   );
 }

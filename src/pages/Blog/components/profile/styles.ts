@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ProfileContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
 
@@ -22,6 +23,9 @@ export const ProfileContainer = styled.div`
 export const ProfileInfos = styled.div`
   display: flex;
   flex-direction: column;
+
+  width: 100%;
+  height: 100%;
 
   color: ${({ theme }) => theme["base-title"]};
 `;
@@ -68,6 +72,12 @@ export const ProfileDescription = styled.span`
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
   line-height: 160%;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 `;
 
 export const ProfileItemsContainer = styled.div`
@@ -77,10 +87,15 @@ export const ProfileItemsContainer = styled.div`
   margin-top: 1.5rem;
 
   gap: 1.5rem;
+
+  position: absolute;
+  bottom: 2rem;
 `;
 
 export const ProfileItem = styled.div`
   display: flex;
+
   align-items: center;
+
   gap: 0.5rem;
 `;

@@ -7,16 +7,21 @@ import {
 } from "react";
 import { api } from "../lib/axios";
 
-export interface Post {
+export interface PostData {
   title: string;
   body: string;
   created_at: string;
   id: string;
   number: number;
+  html_url: string;
+  comments: number;
+  user: {
+    login: string;
+  };
 }
 
 interface PostsContextType {
-  posts: Post[];
+  posts: PostData[];
   fetchPosts: (query?: string) => Promise<void>;
 }
 
@@ -27,7 +32,7 @@ interface PostProviderProps {
 export const PostsContext = createContext({} as PostsContextType);
 
 export function PostsProvider({ children }: PostProviderProps) {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<PostData[]>([]);
 
   const fetchPosts = useCallback(async (query: string = "") => {
     const response = await api.get(

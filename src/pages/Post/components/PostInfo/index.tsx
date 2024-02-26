@@ -31,7 +31,7 @@ export function PostInfo({ post, isLoading }: PostInfoProps) {
       ) : (
         <>
           <Links>
-            <NavLink to="/blog">
+            <NavLink to="/">
               <FontAwesomeIcon icon={faChevronLeft} />
               Voltar
             </NavLink>

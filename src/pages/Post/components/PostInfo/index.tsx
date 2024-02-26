@@ -35,7 +35,7 @@ export function PostInfo({ post, isLoading }: PostInfoProps) {
               <FontAwesomeIcon icon={faChevronLeft} />
               Voltar
             </NavLink>
-            <a href={post.html_url}>
+            <a href={post.html_url} target="_blank" rel="noreferrer">
               Ver no github
               <FontAwesomeIcon icon={faUpRightFromSquare} />
             </a>

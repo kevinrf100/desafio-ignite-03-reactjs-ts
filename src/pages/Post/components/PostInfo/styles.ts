@@ -18,20 +18,25 @@ export const Links = styled.div`
 
   display: flex;
   justify-content: space-between;
-`;
 
-export const BaseLink = styled.a`
-  display: flex;
-  align-items: center;
+  a {
+    display: flex;
+    align-items: center;
 
-  gap: 0.5rem;
+    gap: 0.5rem;
 
-  color: ${({ theme }) => theme["blue-500"]};
+    color: ${({ theme }) => theme["blue-500"]};
+    border-bottom: 1px solid transparent;
 
-  text-transform: uppercase;
+    text-transform: uppercase;
 
-  font-size: 0.75rem;
-  font-weight: bold;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+
+  a:hover {
+    border-bottom: 1px solid ${({ theme }) => theme["blue-500"]};
+  }
 `;
 
 export const Title = styled.h1`

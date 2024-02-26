@@ -52,6 +52,7 @@ export const ProfileNameContainer = styled.div`
     justify-content: center;
 
     color: ${({ theme }) => theme["blue-500"]};
+    border-bottom: 1px solid transparent;
 
     height: fit-content;
 

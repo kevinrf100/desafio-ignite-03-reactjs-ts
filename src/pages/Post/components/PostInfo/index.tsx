@@ -15,36 +15,48 @@ import {
   faUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { PostData } from "../../../../contexts/PostsContext";
+import { dateFormatterFromNow } from "../../../../lib/Utils/formatter";
 
-export function PostInfo() {
+interface PostInfoProps {
+  post: PostData;
+  isLoading: boolean;
+}
+
+export function PostInfo({ post, isLoading }: PostInfoProps) {
   return (
     <PostInfoContainer>
-      <Links>
-        <NavLink to="/blog">
-          <BaseLink>
-            <FontAwesomeIcon icon={faChevronLeft} />
-            Voltar
-          </BaseLink>
-        </NavLink>
-        <BaseLink href="https://github.com/kevinrf100">
-          Ver no github
-          <FontAwesomeIcon icon={faUpRightFromSquare} />
-        </BaseLink>
-      </Links>
-      <Title>JavaScript data types and data structures</Title>
-      <PostInfosItemsContainer>
-        <PostInfoItem>
-          <FontAwesomeIcon width={18} icon={faGithub} />
-          kevinfe
-        </PostInfoItem>
-        <PostInfoItem>
-          <FontAwesomeIcon width={18} icon={faCalendarDay} />
-          Há 1 dia
-        </PostInfoItem>
-        <PostInfoItem>
-          <FontAwesomeIcon width={18} icon={faComment} />5 comentários
-        </PostInfoItem>
-      </PostInfosItemsContainer>
+      {isLoading ? (
+        <>Loading</>
+      ) : (
+        <>
+          <Links>
+            <NavLink to="/blog">
+              <FontAwesomeIcon icon={faChevronLeft} />
+              Voltar
+            </NavLink>
+            <a href={post.html_url}>
+              Ver no github
+              <FontAwesomeIcon icon={faUpRightFromSquare} />
+            </a>
+          </Links>
+          <Title>{post.title}</Title>
+          <PostInfosItemsContainer>
+            <PostInfoItem>
+              <FontAwesomeIcon width={18} icon={faGithub} />
+              {post.user.login}
+            </PostInfoItem>
+            <PostInfoItem>
+              <FontAwesomeIcon width={18} icon={faCalendarDay} />
+              {dateFormatterFromNow(post.created_at)}
+            </PostInfoItem>
+            <PostInfoItem>
+              <FontAwesomeIcon width={18} icon={faComment} />
+              {post.comments + " "} comentários
+            </PostInfoItem>
+          </PostInfosItemsContainer>
+        </>
+      )}
     </PostInfoContainer>
   );
 }
